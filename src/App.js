@@ -17,7 +17,7 @@ apiKey: '1409f71571c74376a8655ee683d60fb0'
 const ParticlesOptions = {
     particles: {
       number: {
-        value: 50,
+        value: 100,
         density: {
         enable: true,
         value_area: 800
@@ -45,7 +45,7 @@ class App extends Component {
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.rightCol * width),
+      rightCol: width - (clarifaiFace.right_Col * width),
       bottomRow: height - (clarifaiFace.bottom_row * height)
     }
   }
