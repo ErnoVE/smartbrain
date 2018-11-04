@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import Navigation from './components/Navigation/Navigation';
+import Signin from './components/Signin/Signin';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
@@ -33,11 +34,11 @@ class App extends Component {
     this.state = {
       input:'',
       imageUrl:'',
-      box: {},
+      box: {}
     }
   }
   calculateFaceLocation = (data) => {
-    const clarifaiFace = data.outputs[0].data.regions[0].regions.info.bounding_box;
+    const clarifaiFace = data.outputs[0].data.regions[0].regions_info.bounding_box;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
@@ -75,6 +76,7 @@ class App extends Component {
         params={ParticlesOptions}
         />
         <Navigation />
+        <Signin />
         <Logo />
         <Rank />
         <ImageLinkForm 
